@@ -1,0 +1,72 @@
+print("十進位轉二進位與十六進位轉換器")
+
+print("輸入數字0到255")
+text=input()
+
+while text.isdigit()==False or int(text)<0 or int(text)>255:
+  print("請輸入正確數字")
+  print("輸入數字0到255")
+  text=input()
+
+
+#二進位運算
+number=int(text)
+
+if number>=128:
+  number-=128
+  n7=1
+else:
+  n7=0
+
+if number>=64:
+  number-=64
+  n6=1
+else:
+  n6=0
+
+if number>=32:
+  number-=32
+  n5=1
+else:
+  n5=0
+
+if number>=16:
+  number-=16
+  n4=1
+else:
+  n4=0
+
+if number>=8:
+  number-=8
+  n3=1
+else:
+  n3=0
+
+if number>=4:
+  number-=4
+  n2=1
+else:
+  n2=0
+
+if number>=2:
+  number-=2
+  n1=1
+else:
+  n1=0
+
+n0=number
+
+print("")
+print("二進位為")
+print(n7,n6,n5,n4,n3,n2,n1,n0, sep="")
+
+
+#16進位運算
+m2=n7*8+n6*4+n5*2+n4 #16進位十位數
+m1=n3*8+n2*4+n1*2+n0 #16進位個位數
+
+
+name=[0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]#16進位數字
+print("")
+print("十六進位為")
+print(name[m2],name[m1], sep="")
